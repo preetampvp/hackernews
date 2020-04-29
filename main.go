@@ -1,18 +1,15 @@
 package main
 
 import (
-	"fmt"
-
 	_ "github.com/pkg/browser"
 	"github.com/preetampvp/hackernews/feed"
+	"github.com/preetampvp/hackernews/ui"
 )
 
 func main() {
-	feedBase := "https://news.ycombinator.com/"
-	feed := feed.NewScraper()
+	feed := feed.NewHackerNewsScraper()
+	ui := ui.NewFeedViewer(feed)
+	ui.Show()
 
-	for f := range feed.ScrapeFeed(fmt.Sprintf("%snewest", feedBase)) {
-		// go browser.OpenURL(f.Link)
-		fmt.Println(f.Title, f.Link)
-	}
+	// _ = browser.OpenURL("https://www.nytimes.com/2013/02/17/fashion/creating-hipsturbia-in-the-suburbs-of-new-york.html")
 }
