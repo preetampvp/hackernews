@@ -35,7 +35,7 @@ func NewHackerNewsScraper() Scraper {
 }
 
 func (s *scraper) GetFeedName() string {
-	return fmt.Sprintf("Hacker News Feed [%d]", s.pageIndex)
+	return fmt.Sprintf("  Hacker News Feed [%d]  ", s.pageIndex)
 }
 
 func (s *scraper) GetInitialFeed() chan Feed {
