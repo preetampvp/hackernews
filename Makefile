@@ -1,2 +1,6 @@
+startfile = "cmd/hn.go"
 run:
-	go run main.go
+	go run $(startfile) 
+
+install:
+	go install $(startfile) 
